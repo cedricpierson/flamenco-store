@@ -1,4 +1,6 @@
-# Flamenco Store: A Qwik JS E-Store styled with Tailwind
+# Flamenco Store 🔥
+
+## A Qwik JS E-Store styled with Tailwind
 
 # Qwik City App ⚡️
 
