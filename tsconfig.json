@@ -21,6 +21,6 @@
       "~/*": ["./src/*"]
     }
   },
-  "files": ["./.eslintrc.cjs", "./postcss.config.js"],
+  "files": [],
   "include": ["src"]
 }
