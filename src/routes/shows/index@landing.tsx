@@ -4,12 +4,9 @@ import {
   useContext,
   useStore,
 } from "@builder.io/qwik";
-import { useLocation } from "@builder.io/qwik-city";
 import { MyContext } from "~/root";
 
 export default component$(() => {
-  const loc = useLocation();
-
   const state = useStore({
     name: "",
     url: "",

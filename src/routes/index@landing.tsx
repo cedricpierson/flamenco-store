@@ -4,7 +4,6 @@ import {
   useBrowserVisibleTask$,
 } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { Link } from "@builder.io/qwik-city";
 import ProductsGrid from "~/components/products-grid/products-grid";
 import { MyContext } from "~/root";
 

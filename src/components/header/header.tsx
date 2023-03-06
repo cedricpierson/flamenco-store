@@ -1,7 +1,6 @@
 import {
   component$,
   useStore,
-  useBrowserVisibleTask$,
   $,
   useContext,
   useTask$,
