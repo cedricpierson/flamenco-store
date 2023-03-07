@@ -9,14 +9,14 @@ import { MyContext } from "~/root";
 import Modal from "../modal/modal";
 
 export default component$(() => {
-  const store = useStore({
+  const store: any = useStore({
     scrolled: false,
     numItems: 0,
     modal: false,
     cart: [],
   });
 
-  const contextState = useContext(MyContext);
+  const contextState: any = useContext(MyContext);
 
   // useBrowserVisibleTask$(() => {
   //   if (localStorage.getItem("show-basket")) {

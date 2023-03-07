@@ -8,13 +8,12 @@ import ProductsGrid from "~/components/products-grid/products-grid";
 import { MyContext } from "~/root";
 
 export default component$(() => {
-  const contextState = useContext(MyContext);
-  console.log(contextState);
+  const contextState: any = useContext(MyContext);
 
   useBrowserVisibleTask$(() => {
     if (localStorage.getItem("show-basket")) {
       contextState.items = [
-        ...JSON.parse(localStorage.getItem("show-basket")).items,
+        ...JSON.parse(localStorage.getItem("show-basket") || "{}").items,
       ];
     }
   });

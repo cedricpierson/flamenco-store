@@ -13,10 +13,10 @@ export default component$(() => {
     price: "",
   });
 
-  const contextState = useContext(MyContext);
-
+  const contextState: any = useContext(MyContext);
+  console.log(contextState);
   useBrowserVisibleTask$(() => {
-    const data = JSON.parse(localStorage.getItem("show"));
+    const data = JSON.parse(localStorage.getItem("show") || "{}");
     state.name = data.name;
     state.url = data.url;
     state.price = data.price;
@@ -25,7 +25,7 @@ export default component$(() => {
   useBrowserVisibleTask$(() => {
     if (localStorage.getItem("show-basket")) {
       contextState.items = [
-        ...JSON.parse(localStorage.getItem("show-basket")).items,
+        ...JSON.parse(localStorage.getItem("show-basket") || "{}").items,
       ];
     }
   });
@@ -40,13 +40,15 @@ export default component$(() => {
         />
         <div class="flex justify-between p-4">
           <h2 class="text-xl">{state.name}</h2>
-          <p>{state.price}€</p>
+          <p>{state.price}</p>
         </div>
         <button
           onClick$={() => {
-            let currBasket = { items: [] };
+            let currBasket: any = { items: [] };
             if (localStorage.getItem("show-basket")) {
-              currBasket = JSON.parse(localStorage.getItem("show-basket"));
+              currBasket = JSON.parse(
+                localStorage.getItem("show-basket") || "{}"
+              );
             }
             currBasket.items.push(state);
             localStorage.setItem("show-basket", JSON.stringify(currBasket));

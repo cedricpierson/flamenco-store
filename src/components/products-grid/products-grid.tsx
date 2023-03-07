@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import Card from "../card/card";
 
 export default component$(() => {
-  const shows = [
+  const shows: any = [
     {
       name: "Caracoles",
       url: "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/f2/62/75.jpg",
@@ -20,7 +20,7 @@ export default component$(() => {
     },
     {
       name: "Tablao",
-      url: "http://jmstrings.com/wp-content/uploads/2019/04/Flamenco-show-Barcelona.jpg",
+      url: "https://jmstrings.com/wp-content/uploads/2019/04/Flamenco-show-Barcelona.jpg",
       price: "15",
     },
     {
@@ -37,7 +37,7 @@ export default component$(() => {
   return (
     <div id="products" class="min-h-screen grid place-items-center  py-8">
       <div class="flex gap-4 flex-wrap items-stretch justify-center max-w-[1400px]">
-        {shows.map((show) => (
+        {shows.map((show: any) => (
           <Card {...show} />
         ))}
       </div>

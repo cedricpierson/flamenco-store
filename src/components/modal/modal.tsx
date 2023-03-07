@@ -1,8 +1,14 @@
 import { component$ } from "@builder.io/qwik";
 
-export default component$((props) => {
+export interface Props {
+  onClose: any;
+  store: any;
+  contextState: any;
+}
+
+export default component$((props: Props) => {
   const { onClose, store, contextState } = props;
-  console.log(store.cart);
+
   return (
     <div class="absolute top-0 right-0 shadow w-full h-screen overflow-scroll bg-white z-50 flex flex-col gap-4 p-4 sm:w-[500px] text-slate-900">
       <div class="flex items-center justify-between pb-4 border-b">
@@ -14,7 +20,7 @@ export default component$((props) => {
       </div>
       {store.cart.length > 0 ? (
         <div class="bg-slate-900 flex flex-col gap-[1px]">
-          {store.cart.map((item, i) => {
+          {store.cart.map((item: any, i: number) => {
             return (
               <div class="bg-white p-4 flex items-center justify-between text-slate-900">
                 <div class="flex flex-col gap-1">
@@ -24,7 +30,7 @@ export default component$((props) => {
                 <i
                   onClick$={() => {
                     contextState.items = contextState.items.reduce(
-                      (acc, curr, index) => {
+                      (acc: any, curr: number, index: number) => {
                         if (index !== i) {
                           return [...acc, curr];
                         }
